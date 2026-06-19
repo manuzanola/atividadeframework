@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
-import 'TelaLogin.dart';
+import 'package:revisao/pages/telaLogin.dart';
+import './pages/telaRevisao.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: TelaLogin(),
+    ),
+  );
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MeuApp extends StatelessWidget {
+  const MeuApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'App Login',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4F6BF4)),
         useMaterial3: true,
-        fontFamily: 'Roboto',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          secondary: Colors.amber,
+        ),
       ),
       home: const TelaLogin(),
     );
